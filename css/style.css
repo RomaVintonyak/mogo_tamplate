@@ -228,6 +228,11 @@ hr {
 .section-gery {
     background-color: #f8f8f8;
 }
+.section-clients{
+    background: #f5f5f5 url("../img/img_clients/bg.jpg")no-repeat center;
+    -webkit-background-size:cover;
+    background-size: cover;
+}
 
 .section_hader {
     width: 100%;
@@ -488,7 +493,7 @@ hr {
 }
 
 .rewius-item {
-    padding-left: 205px;
+    padding-left: 255px;
     position: relative;
 }
 
@@ -649,4 +654,97 @@ border-right: 0;
 .logos{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+/*works*/
+.works{
+    display: flex;
+}
+.works-col{
+    flex: 1 1 0;
+}
+.works-itm{
+    position: relative;
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+.works-itm:hover .works-img{
+    opacity: 0.1;
+}
+.works-itm:hover .works-info{
+    opacity: 1;
+}
+.works-img{
+    transition: opacity 0.2s linear;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.works-info{
+    position: absolute;
+    padding: 0, 15px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s linear; 
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translate3d(0, -50%, 0);
+}
+.works-title{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+.works-text{
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+/*clients*/
+.clients{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+.clients-item{
+    width: 50%;
+    padding: 0 45px 0 175px;
+    position: relative;
+    margin-bottom: 60px;
+}
+.clients-foto{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 1;
+}
+.clients-name{
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+}
+.clients-prof{
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    font-style: italic;
+}
+.clients-text{
+    color: #999999;
+    font-size: 15px;
+}
+.clients-text::before{
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background-color: #f38181;
+    margin: 15px 0;
 }
