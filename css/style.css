@@ -75,7 +75,8 @@ hr {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1230px;
+    padding: 0 15px;
     margin: 0 auto;
 }
 
@@ -212,6 +213,9 @@ hr {
     font-size: 24px;
     font-weight: bold;
 }
+.slider_text{
+    margin-left: 5px;
+}
 /*section*/
 
 .section {
@@ -339,6 +343,7 @@ hr {
 
 .stat {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .stat_item {
@@ -371,13 +376,17 @@ hr {
 
 .services {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .services_item {
-    flex: 1 1 0;
-    padding-left: 85px;
-    padding-right: 35px;
+    width: 33.33333%;
+    padding: 0 35px 40px 85px;
     position: relative;
+    margin-bottom: 40px;
+}
+.services_item--border{
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .services_icon {
@@ -409,6 +418,8 @@ hr {
 
 .devices_item {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .devices_item--iphone {
@@ -421,10 +432,19 @@ hr {
 
 .wedo {
     display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
 }
 
 .wedo-item {
-    flex: 1 1 0;
+    padding: 0 15px;
+    width: 50%;
+    /*flex: 1 1 0;*/
+}
+.wedo_img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 /*acardeon*/
 
@@ -1020,4 +1040,129 @@ border-right: 0;
 }
 .copy_right span{
     color: #f38181;
+}
+/*medi queris laptop*/
+@media (max-width: 1230px){
+    /*intro*/
+    .intro-title{
+        font-size: 120px;
+    }
+    .intro-suptitle {
+        font-size: 52px;
+    }
+}
+/*media queris tablet*/
+@media (max-width: 990px){
+    /*intro*/
+    .intro-title{
+        font-size: 80px;
+    }
+    .intro-suptitle {
+        font-size: 32px;
+    }
+    /*statistic*/
+    .stat{
+        justify-content: center;
+    }
+    .stat_item{
+        flex: none;
+        width: 33.33333%;
+        border:0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .stat_item:last-child {
+        border-right: 0;
+    }
+    /*services*/
+    .services_item{
+       width: 50%;
+       padding-bottom: 0;
+    }
+    .services_item--border{
+        border-bottom: 0;
+    }
+}
+@media (max-width: 770px){
+    /*nav menu*/
+    .nav{
+      display: none;
+      }
+      /*section*/
+      .section{
+         padding: 40px 0; 
+      }
+      .section--devices{
+          padding-bottom: 0;
+      }
+      /*slider*/
+  .slider_text{
+    display: none;
+  }
+  .slider-item.active::before{
+      width: 50%;
+  }
+    /*services*/
+    .services{
+        justify-content: center;
+    }
+    .services_item{
+        width: 100%;
+        max-width: 400px;
+        padding-left: 55px;
+        padding-right: 0;
+     }
+     .services_icon{
+         left: 0;
+     }
+     /*we do*/
+     .wedo_img{
+         display: none;
+     }
+     .wedo-item{
+         width: 100%;
+     }
+}
+/*media queris mobile phone*/
+@media (max-width: 575px){
+    /*intro*/
+    .intro-title{
+        font-size: 40px;
+    }
+    .intro-suptitle {
+        font-size: 22px;
+    }
+    /*section*/
+    .section_hader{
+        margin-bottom: 50px;
+    }
+    .section_suptitle{
+        font-size: 20px;
+    }
+    .section_title{
+        font-size: 24px;
+    }
+    .section_title::after{
+       margin: 20px auto; 
+    }
+    /*statistic*/
+    .stat_item{
+       width: 100%; 
+       border-bottom: 1px solid #b5eae0;
+    }
+    .stat_item:last-child{
+        border-bottom: 0;
+    }
+    .stat_count{
+        font-size: 52px;
+    }
+    /*decicess*/
+    .devices{
+        max-width: 320px;
+    }
+    .devices_item--iphone{
+       width: 180px; 
+       bottom: -50px;
+       right: -80px;
+    }
 }
