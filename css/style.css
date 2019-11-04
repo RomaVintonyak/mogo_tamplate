@@ -96,6 +96,7 @@ hr {
   padding-top: 30px;
 }
 .header.fixed{
+  padding: 10px 0;
   background-color: #eb8b8d;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -180,6 +181,9 @@ hr {
   background: none;
   cursor: pointer;
   display: none;
+}
+.nav-toogler:focus{
+  outline: 0;
 }
 .nav-toogler-item {
   display: block;
@@ -595,6 +599,9 @@ hr {
   padding: 0 110px;
   position: relative;
 }
+.rewius .slick-slider{
+  padding: 0 110px;
+}
 
 .rewius-item {
   padding-left: 255px;
@@ -635,16 +642,24 @@ hr {
   background-color: #f38181;
 }
 
-.rewius-btn {
+.rewius-btn,
+.slick-arrow {
   font-size: 0;
+  border: 0;
+  background: none;
   color: transparent;
   position: absolute;
   top: 50%;
+  cursor: pointer;
   z-index: 1;
   transform: translateY(-50%);
 }
+.slick-arrow:focus{
+  outline: 0;
+}
 
-.rewius-btn::after {
+.rewius-btn::after,
+.slick-arrow::after {
   content: "";
   display: block;
   width: 16px;
@@ -653,12 +668,14 @@ hr {
   border-left: 2px solid #ccc;
 }
 
-.rewius-btn-prew {
+.rewius-btn-prew,
+.slick-prev {
   left: 0;
   transform: rotate(-45deg);
 }
 
-.rewius-btn-next {
+.rewius-btn-next,
+.slick-next {
   right: 0;
   transform: rotate(135deg);
 }
@@ -1262,6 +1279,9 @@ hr {
     top: 100%;
     left: 0;
     background-color: #eb8b8d;
+  }
+  .nav.active{
+    display: block;
   }
   .nav_link{
     display: block;
