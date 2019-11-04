@@ -36,6 +36,8 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 650px;
+  position: relative;
   width: 100%;
   height: 100vh;
   background: url("../img/intro.jpg") center no-repeat;
@@ -73,8 +75,8 @@ hr {
   background-color: #ffffff;
 }
 /*page*/
-.page{
-    overflow: hidden;
+.page {
+  overflow: hidden;
 }
 
 .container {
@@ -91,7 +93,19 @@ hr {
   right: 0;
   left: 0;
   z-index: 1000;
-  margin-top: 30px;
+  padding-top: 30px;
+}
+.header.fixed{
+  background-color: #eb8b8d;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+.header.active{
+  background-color: #eb8b8d;
 }
 
 .header_logo {
@@ -151,6 +165,67 @@ hr {
 .nav_icon {
   color: #fff;
   margin: 0 15px;
+}
+/*nav  toogler*/
+.nav-toogler {
+  width: 30px;
+  padding: 10px 0;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+  font-size: 0;
+  color: transparent;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+.nav-toogler-item {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  transition: background 0.2s linear;
+}
+.nav-toogler.active 
+.nav-toogler-item{
+  background: none;
+}
+.nav-toogler.active 
+.nav-toogler-item::before{
+  transform-origin: left top;
+  transform: rotate(45deg)
+  translate3d(0px, -2px, 0);
+}
+.nav-toogler.active 
+.nav-toogler-item::after{
+  transform-origin: left bottom;
+  transform: rotate(-45deg)
+  translate3d(0px, 3px, 0);
+}
+.nav-toogler-item::before,
+.nav-toogler-item::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.2s linear;
+}
+.nav-toogler-item::before {
+  top: -8px;
+}
+.nav-toogler-item::after {
+  bottom: -8px;
 }
 /*Button*/
 
@@ -1150,31 +1225,51 @@ hr {
     border-right: 1px solid white;
   }
   /*section_header*/
-    .section_suptitle{
-      font-size: 20px;
-    }
-    .section_title{
-      font-size: 26px;
-    }
-    .section_text{
-      width: auto;
-    }
-    /*about*/
-    .about{
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    /*card*/
-    .card{
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding-top: 10px;
-    }
+  .section_suptitle {
+    font-size: 20px;
+  }
+  .section_title {
+    font-size: 26px;
+  }
+  .section_text {
+    width: auto;
+  }
+  /*about*/
+  .about {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  /*card*/
+  .card {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
 }
 @media (max-width: 770px) {
+  .intro {
+    min-height: 650px;
+  }
+  /*header*/
+  .header {
+    padding: 10px 0;
+  }
   /*nav menu*/
   .nav {
     display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #eb8b8d;
+  }
+  .nav_link{
+    display: block;
+    margin: 0;
+    padding: 8px 20px;
+  }
+  .nav-toogler{
+    display: block;
   }
   /*section*/
   .section {
@@ -1247,11 +1342,11 @@ hr {
   .footer_coll--third {
     width: 100%;
   }
-  .acardeon{
+  .acardeon {
     padding-top: 10px;
   }
   /*card*/
-  .card{
+  .card {
     padding-top: 15px;
   }
 }
@@ -1335,31 +1430,31 @@ hr {
     margin: 15px auto;
   }
   /*subscribe*/
-  .subscribe{
-      flex-wrap: wrap;
-      max-width: none;
+  .subscribe {
+    flex-wrap: wrap;
+    max-width: none;
   }
-  .subscrib_input{
-      border-right: 1px splid #e7e7e7;
-      margin-bottom: 10px;
+  .subscrib_input {
+    border-right: 1px splid #e7e7e7;
+    margin-bottom: 10px;
   }
   .subscrib_input,
-  .subscrib_button{
-      width: 100%;
+  .subscrib_button {
+    width: 100%;
   }
   /*blogs*/
-  .blogs_title{
-      font-size: 10px;
+  .blogs_title {
+    font-size: 10px;
   }
-  .blogs_img{
-      width: 80px;
-      height: 50px;
+  .blogs_img {
+    width: 80px;
+    height: 50px;
   }
   /*about*/
-  .about_item{
+  .about_item {
     width: auto;
   }
-  .about_item img{
+  .about_item img {
     width: 300px;
     height: auto;
   }
@@ -1367,14 +1462,14 @@ hr {
   .acardeon {
     padding-top: 80px;
   }
-   /*card*/
-   .card{
+  /*card*/
+  .card {
     padding-top: 80px;
   }
-  .card_item{
+  .card_item {
     width: auto;
   }
-  .card_img img{
+  .card_img img {
     width: 300px;
     height: auto;
   }
